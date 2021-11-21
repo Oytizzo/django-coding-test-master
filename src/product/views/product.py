@@ -33,7 +33,7 @@ class ProductListView(generic.ListView):
         if price_from and price_to:
             products = products.filter(productvariantprice__price__range=(price_from, price_to))
         if variant:
-            products = products.filter(produtvariant__eq='green')
+            products = products.filter(productvariant__variant_title=variant)
         if date:
             products = products.filter(created_at__gte=date)
             return products
