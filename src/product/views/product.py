@@ -45,13 +45,6 @@ class ProductListView(generic.ListView):
 
         return products
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['variants'] = Variant.objects.all()
-    #     # product_variant_price = ProductVariantPrice.objects.first()
-    #     # context['product_variant_price'] = product_variant_price
-    #     return context
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['variants'] = ProductVariant.objects.all()
