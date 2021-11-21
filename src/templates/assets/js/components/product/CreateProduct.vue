@@ -103,6 +103,10 @@ import InputTag from 'vue-input-tag'
 
 import axios from 'axios';
 
+import Cookies from 'js-cookie'
+
+const csrftoken = Cookies.get('csrftoken')
+
 export default {
   components: {
     vueDropzone: vue2Dropzone,
@@ -190,8 +194,13 @@ export default {
         product_variant_prices: this.product_variant_prices
       }
 
+      const headers = {
+         'X-CSRFToken': csrftoken
+       }
 
-      axios.post('/api/product', product).then(response => {
+      axios.post('/api/product/', product, {
+        headers: headers
+      }).then(response => {
         console.log(response.data);
       }).catch(error => {
         console.log(error);
