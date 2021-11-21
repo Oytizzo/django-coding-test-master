@@ -21,10 +21,13 @@ from django.views.static import serve
 
 from config import settings
 
+from .routers import router
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authentication.urls')),
-    path('product/', include('product.urls'))
+    path('product/', include('product.urls')),
+    path('api/', include(router.urls)),
 ]
 
 if settings.DEBUG:

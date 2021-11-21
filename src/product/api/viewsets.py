@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from product.models import Product, Variant, ProductVariant, ProductImage
 
-from .serializers import ProductSerializer, ProductVariantSerializer, ProductImageSerializer
+from .serializers import ProductSerializer, ProductVariantSerializer
 
 
 class ProductViewset(viewsets.ModelViewSet):
@@ -14,6 +14,6 @@ class ProductVariantViewset(viewsets.ModelViewSet):
     serializer_class = ProductVariantSerializer
 
 
-class ProductImageViewset(viewsets.ModelViewSet):
-    queryset = ProductImage.objects.all()
-    serializer_class = ProductImageSerializer
+# class ProductImageViewset(viewsets.ModelViewSet):
+#     queryset = ProductImage.objects.all()
+#     serializer_class = ProductImageSerializer

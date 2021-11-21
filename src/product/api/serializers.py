@@ -29,7 +29,7 @@ class ProductVariantPriceSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ProductImageSerializer(serializers.Serializer, ABC):
-    class Meta:
-        model = ProductImage
-        fields = '__all__'
+# class ProductImageSerializer(serializers.Serializer, ABC):
+#     class Meta:
+#         model = ProductImage
+#         fields = '__all__'
