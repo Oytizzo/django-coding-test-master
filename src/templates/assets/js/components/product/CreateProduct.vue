@@ -101,6 +101,8 @@ import vue2Dropzone from 'vue2-dropzone'
 import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 import InputTag from 'vue-input-tag'
 
+import axios from 'axios';
+
 export default {
   components: {
     vueDropzone: vue2Dropzone,
@@ -189,7 +191,7 @@ export default {
       }
 
 
-      axios.post('/product', product).then(response => {
+      axios.post('/api/product', product).then(response => {
         console.log(response.data);
       }).catch(error => {
         console.log(error);
